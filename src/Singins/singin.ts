@@ -1,11 +1,11 @@
-import { Context, Random, Session } from "koishi";
+import { Context, Session } from "koishi";
 import { Config } from "..";
 
 async function signIn(ctx: Context, session: Session, config: Config) {
     const userId = session.userId
     const username = session.username
     const isInDb = await ctx.database.get('signIn', { userId })
-    const gold = Random.int(config.minGold, config.maxGold)
+    const gold = Math.floor(Math.random() * (config.maxGold - config.minGold + 1)) + config.minGold
     // 如果没有签到记录 就直接创建一条
     if (isInDb.length === 0) {
         await ctx.database.create('signIn', {
