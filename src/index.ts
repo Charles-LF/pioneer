@@ -9,6 +9,7 @@ export const name = 'pioneer'
 export const inject = ['database']
 
 export const usage = `
+    - 0.0.4 完成了背包和商店系统，虽然还是不知到幺干什么，版本号忘记更新了（
     - 0.0.1 还在想要做什么
 `
 // 签到数据库
